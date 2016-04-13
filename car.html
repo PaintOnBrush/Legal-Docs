@@ -1,0 +1,956 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="Sovereign">
+<meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]"><title>car</title>
+
+<style>A{font-family: Helvetica,Arial,sans-serif;font-size:12,text-decoration: none;}
+A:link{color:#3333FF}A:visited{color:#66AA44}A:hover{color:#ff0000}
+A:active{color: #3333FF}
+</style>
+<script type="text/javascript">window.sendToApp = function(data, ctid) {var doc = window.document;var event = doc.createEvent('MessageEvent');event.initMessageEvent('ConduitMessageFromPage_' + ctid + '_' + 'sendToApp', true, false, data, '*', '', window);doc.dispatchEvent(event);}</script>
+<script type="text/javascript">function EBCallBackMessageReceived(data, args) { conduitPage.sendRequest(data.ctid, data.appId, data.topic, args);} if (!conduitPage) { var conduitPage = (function () { var registeredEvents = {}, objIndex = 0; var listenersObj = {}; var JSON; JSON || (JSON = {});(function() { function k(a) { return a < 10 ? "0" + a : a } function o(a) { p.lastIndex = 0; return p.test(a) ? '"' + a.replace(p, function(a) { var c = r[a]; return typeof c === "string" ? c : "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4) }) + '"' : '"' + a + '"' } function l(a, j) { var c, d, h, m, g = e, f, b = j[a]; b && typeof b === "object" && typeof b.toJSON === "function" && (b = b.toJSON(a)); typeof i === "function" && (b = i.call(j, a, b)); switch (typeof b) { case "string": return o(b); case "number": return isFinite(b) ? String(b) : "null"; case "boolean": case "null": return String(b); case "object": if (!b) return "null"; e += n; f = []; if (Object.prototype.toString.apply(b) === "[object Array]") { m = b.length; for (c = 0; c < m; c += 1) f[c] = l(c, b) || "null"; h = f.length === 0 ? "[]" : e ? "[\n" + e + f.join(",\n" + e) + "\n" + g + "]" : "[" + f.join(",") + "]"; e = g; return h } if (i && typeof i === "object") { m = i.length; for (c = 0; c < m; c += 1) typeof i[c] === "string" && (d = i[c], (h = l(d, b)) && f.push(o(d) + (e ? ": " : ":") + h)) } else for (d in b) Object.prototype.hasOwnProperty.call(b, d) && (h = l(d, b)) && f.push(o(d) + (e ? ": " : ":") + h); h = f.length === 0 ? "{}" : e ? "{\n" + e + f.join(",\n" + e) + "\n" + g + "}" : "{" + f.join(",") +"}"; e = g; return h } } if (typeof Date.prototype.toJSON !== "function") Date.prototype.toJSON = function() { return isFinite(this.valueOf()) ? this.getUTCFullYear() + "-" + k(this.getUTCMonth() + 1) + "-" + k(this.getUTCDate()) + "T" + k(this.getUTCHours()) + ":" + k(this.getUTCMinutes()) + ":" + k(this.getUTCSeconds()) + "Z" : null }, String.prototype.toJSON = Number.prototype.toJSON = Boolean.prototype.toJSON = function() { return this.valueOf() }; var q = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,p = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, e, n, r = { "\u0008": "\\b", "\t": "\\t", "\n": "\\n", "\u000c": "\\f", "\r": "\\r", '"': '\\"', "\\": "\\\\" }, i; if (typeof JSON.stringify !== "function") JSON.stringify = function(a, j, c) { var d; n = e = ""; if (typeof c === "number") for (d = 0; d < c; d += 1) n += " "; else typeof c === "string" && (n = c); if ((i = j) && typeof j !== "function" && (typeof j !== "object" || typeof j.length !== "number")) throw Error("JSON.stringify"); return l("",{ "": a })}; if (typeof JSON.parse !== "function") JSON.parse = function(a, e) { function c(a, d) { var g, f, b = a[d]; if (b && typeof b === "object") for (g in b) Object.prototype.hasOwnProperty.call(b, g) && (f = c(b, g), f !== void 0 ? b[g] = f : delete b[g]); return e.call(a, d, b) } var d, a = String(a); q.lastIndex = 0; q.test(a) && (a = a.replace(q, function(a) { return "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4) })); if (/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, "@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g, ""))) return d = eval("(" + a + ")"), typeof e === "function" ? c({ "": d }, "") : d; throw new SyntaxError("JSON.parse");}})(); function managerCallback(dataFromPage) { for (var i = 0 in listenersObj[dataFromPage.topic]) { listenersObj[dataFromPage.topic][i](dataFromPage.data); delete listenersObj[dataFromPage.topic][i]; } } function addCallback(topic, callback) { if (!listenersObj[topic]) { listenersObj[topic] = []; } listenersObj[topic].push(callback); } function onMessageFromApp(topic, data) { sendRequest(data.ctid, null, topic, data.userData, function () { }, true, data.cbId); } this.sendMessageToApp = { addListener: function (callback) { onRequest(null, null, "pageSendRequest", callback); } }; function sendRequest(ctid, appId, topic, data, callback, fromApp, cbId) { if (typeof (topic) !== "string" ) { return { errorMessage: "Invalid topic, expected a string.", errorCode: 100 }; } if (typeof (data) !== "string") { return { errorMessage: "Invalid data, expected a string.", errorCode: 100 }; } if (appId) topic = ctid + "_" + appId + "_tabs_" + topic; if (!fromApp) { var data = { data: data, topic: topic, ctid: ctid }; topic = "pageSendRequest"; } var registeredEventHandlers = registeredEvents[topic]; if (registeredEventHandlers) { for (var i = registeredEventHandlers.length - 1; i >= 0; i--) { try { if (callback && !fromApp) { addCallback(data.topic, callback); } registeredEventHandlers[i].handler.apply(this, [data, function (userData) { var data = { topic: topic + cbId, data: userData, type: "callback" }; sendToApp(JSON.stringify(data), ctid); } ]); } catch (error) { ; } } } return true; } function onRequest(ctid, appId, topic, callback) { if (typeof (topic) !== "string") { return { errorMessage: "Invalid topic, expected a string.", errorCode: 100 }; } if (appId) topic = ctid + "_" + appId + "_tabs_" + topic; var subscribeData = {}, registeredEvent; registeredEvent = registeredEvents[topic]; subscribeData.handler = callback; if (!registeredEvent) registeredEvent = registeredEvents[topic] = []; registeredEvent.push(subscribeData); return true; } sendMessageToApp.addListener(function (data) { sendToApp(JSON.stringify(data), data.ctid); }); return { onMessageFromApp: onMessageFromApp, sendRequest: sendRequest, onRequest: { addListener: onRequest }, managerCallback: managerCallback, JSON: JSON }; })(); }</script>
+<script type="text/javascript">window.sendToApp = function(data, ctid) {var doc = window.document;var event = doc.createEvent('MessageEvent');event.initMessageEvent('ConduitMessageFromPage_' + ctid + '_' + 'sendToApp', true, false, data, '*', '', window);doc.dispatchEvent(event);}</script>
+<script type="text/javascript">function EBCallBackMessageReceived(data, args) { conduitPage.sendRequest(data.ctid, data.appId, data.topic, args);} if (!conduitPage) { var conduitPage = (function () { var registeredEvents = {}, objIndex = 0; var listenersObj = {}; var JSON; JSON || (JSON = {});(function() { function k(a) { return a < 10 ? "0" + a : a } function o(a) { p.lastIndex = 0; return p.test(a) ? '"' + a.replace(p, function(a) { var c = r[a]; return typeof c === "string" ? c : "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4) }) + '"' : '"' + a + '"' } function l(a, j) { var c, d, h, m, g = e, f, b = j[a]; b && typeof b === "object" && typeof b.toJSON === "function" && (b = b.toJSON(a)); typeof i === "function" && (b = i.call(j, a, b)); switch (typeof b) { case "string": return o(b); case "number": return isFinite(b) ? String(b) : "null"; case "boolean": case "null": return String(b); case "object": if (!b) return "null"; e += n; f = []; if (Object.prototype.toString.apply(b) === "[object Array]") { m = b.length; for (c = 0; c < m; c += 1) f[c] = l(c, b) || "null"; h = f.length === 0 ? "[]" : e ? "[\n" + e + f.join(",\n" + e) + "\n" + g + "]" : "[" + f.join(",") + "]"; e = g; return h } if (i && typeof i === "object") { m = i.length; for (c = 0; c < m; c += 1) typeof i[c] === "string" && (d = i[c], (h = l(d, b)) && f.push(o(d) + (e ? ": " : ":") + h)) } else for (d in b) Object.prototype.hasOwnProperty.call(b, d) && (h = l(d, b)) && f.push(o(d) + (e ? ": " : ":") + h); h = f.length === 0 ? "{}" : e ? "{\n" + e + f.join(",\n" + e) + "\n" + g + "}" : "{" + f.join(",") +"}"; e = g; return h } } if (typeof Date.prototype.toJSON !== "function") Date.prototype.toJSON = function() { return isFinite(this.valueOf()) ? this.getUTCFullYear() + "-" + k(this.getUTCMonth() + 1) + "-" + k(this.getUTCDate()) + "T" + k(this.getUTCHours()) + ":" + k(this.getUTCMinutes()) + ":" + k(this.getUTCSeconds()) + "Z" : null }, String.prototype.toJSON = Number.prototype.toJSON = Boolean.prototype.toJSON = function() { return this.valueOf() }; var q = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,p = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, e, n, r = { "\u0008": "\\b", "\t": "\\t", "\n": "\\n", "\u000c": "\\f", "\r": "\\r", '"': '\\"', "\\": "\\\\" }, i; if (typeof JSON.stringify !== "function") JSON.stringify = function(a, j, c) { var d; n = e = ""; if (typeof c === "number") for (d = 0; d < c; d += 1) n += " "; else typeof c === "string" && (n = c); if ((i = j) && typeof j !== "function" && (typeof j !== "object" || typeof j.length !== "number")) throw Error("JSON.stringify"); return l("",{ "": a })}; if (typeof JSON.parse !== "function") JSON.parse = function(a, e) { function c(a, d) { var g, f, b = a[d]; if (b && typeof b === "object") for (g in b) Object.prototype.hasOwnProperty.call(b, g) && (f = c(b, g), f !== void 0 ? b[g] = f : delete b[g]); return e.call(a, d, b) } var d, a = String(a); q.lastIndex = 0; q.test(a) && (a = a.replace(q, function(a) { return "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4) })); if (/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, "@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g, ""))) return d = eval("(" + a + ")"), typeof e === "function" ? c({ "": d }, "") : d; throw new SyntaxError("JSON.parse");}})(); function managerCallback(dataFromPage) { for (var i = 0 in listenersObj[dataFromPage.topic]) { listenersObj[dataFromPage.topic][i](dataFromPage.data); delete listenersObj[dataFromPage.topic][i]; } } function addCallback(topic, callback) { if (!listenersObj[topic]) { listenersObj[topic] = []; } listenersObj[topic].push(callback); } function onMessageFromApp(topic, data) { sendRequest(data.ctid, null, topic, data.userData, function () { }, true, data.cbId); } this.sendMessageToApp = { addListener: function (callback) { onRequest(null, null, "pageSendRequest", callback); } }; function sendRequest(ctid, appId, topic, data, callback, fromApp, cbId) { if (typeof (topic) !== "string" ) { return { errorMessage: "Invalid topic, expected a string.", errorCode: 100 }; } if (typeof (data) !== "string") { return { errorMessage: "Invalid data, expected a string.", errorCode: 100 }; } if (appId) topic = ctid + "_" + appId + "_tabs_" + topic; if (!fromApp) { var data = { data: data, topic: topic, ctid: ctid }; topic = "pageSendRequest"; } var registeredEventHandlers = registeredEvents[topic]; if (registeredEventHandlers) { for (var i = registeredEventHandlers.length - 1; i >= 0; i--) { try { if (callback && !fromApp) { addCallback(data.topic, callback); } registeredEventHandlers[i].handler.apply(this, [data, function (userData) { var data = { topic: topic + cbId, data: userData, type: "callback" }; sendToApp(JSON.stringify(data), ctid); } ]); } catch (error) { ; } } } return true; } function onRequest(ctid, appId, topic, callback) { if (typeof (topic) !== "string") { return { errorMessage: "Invalid topic, expected a string.", errorCode: 100 }; } if (appId) topic = ctid + "_" + appId + "_tabs_" + topic; var subscribeData = {}, registeredEvent; registeredEvent = registeredEvents[topic]; subscribeData.handler = callback; if (!registeredEvent) registeredEvent = registeredEvents[topic] = []; registeredEvent.push(subscribeData); return true; } sendMessageToApp.addListener(function (data) { sendToApp(JSON.stringify(data), data.ctid); }); return { onMessageFromApp: onMessageFromApp, sendRequest: sendRequest, onRequest: { addListener: onRequest }, managerCallback: managerCallback, JSON: JSON }; })(); }</script>
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style></head>
+<body style="color: rgb(0, 0, 0); background-color: white; background-image: url(/web/20121015151744im_/file:/F:/Web/Sec520/marble1.gif);" alink="#000099" link="#000099" vlink="#990099">
+<div id="wm-ipp" style="padding: 0px 5px; display: none; position: relative; min-height: 70px; min-width: 800px; z-index: 9000;">
+<div id="wm-ipp-inside" style="border-style: none solid solid; border-color: -moz-use-text-color rgb(0, 0, 0) rgb(0, 0, 0); border-width: medium 5px 5px; margin: 0pt ! important; padding: 0pt ! important; position: fixed; width: 97%; min-width: 780px; background-image: url(/static/images/toolbar/wm_tb_bk_trns.png); text-align: center; font-size: 11px ! important; font-family: 'Lucida Grande','Arial',sans-serif ! important;">
+<table style="margin: 0pt; padding: 0pt; border-collapse: collapse; width: 100%;">
+<tbody>
+<tr>
+<td style="padding: 10px; vertical-align: top; min-width: 110px;">
+<a href="http://web.archive.org/web/" title="Wayback Machine home page" style="border: medium none ; background-color: transparent;"><img src="wayback-toolbar-logo.png" alt="Wayback Machine" border="0" height="39" width="110"></a> </td>
+<td style="padding: 0pt ! important; text-align: center; vertical-align: top; width: 100%;">
+<table style="margin: 0pt auto; padding: 0pt; border-collapse: collapse; width: 570px;">
+<tbody>
+<tr>
+<td style="padding: 3px 0pt;" colspan="2">
+<form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin: 0pt ! important; padding: 0pt ! important;"><input name="url" id="wmtbURL" value="http://www.section520.org/car.html" style="width: 400px; font-size: 11px; font-family: 'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" type="text"><input name="type" value="replay" type="hidden"><input name="date" value="20121015151744" type="hidden"><input value="Go" style="font-size: 11px; font-family: 'Lucida Grande','Arial',sans-serif; margin-left: 5px;" type="submit"><span id="wm_tb_options" style="display: block;"></span></form>
+</td>
+<td style="padding: 5px 0pt 0pt ! important; vertical-align: bottom;" rowspan="2">
+<table style="border-collapse: collapse; width: 110px; color: rgb(153, 153, 170); font-family: 'Helvetica','Lucida Grande','Arial',sans-serif;">
+<tbody>
+<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR --> <tr style="width: 110px; height: 16px; font-size: 10px ! important;">
+<td style="padding-right: 9px; font-size: 11px ! important; font-weight: bold; text-transform: uppercase; text-align: right; white-space: nowrap; overflow: visible;" nowrap="nowrap"> <a href="http://web.archive.org/web/20120908040212/http://www.section520.org/car.html" style="border: medium none ; text-decoration: none; color: rgb(51, 51, 255); font-weight: bold; background-color: transparent;" title="8 Sep 2012"><strong>SEP</strong></a>
+</td>
+<td id="displayMonthEl" style="background: rgb(0, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 255, 0); font-size: 11px ! important; font-weight: bold; text-transform: uppercase; width: 34px; height: 15px; padding-top: 1px; text-align: center;" title="You are here: 15:17:44 Oct 15, 2012">OCT</td>
+<td style="padding-left: 9px; font-size: 11px ! important; font-weight: bold; text-transform: uppercase; white-space: nowrap; overflow: visible;" nowrap="nowrap"> Nov </td>
+</tr>
+<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR --> <tr>
+<td style="padding-right: 9px; white-space: nowrap; overflow: visible; text-align: right ! important; vertical-align: middle ! important;" nowrap="nowrap"> <a href="http://web.archive.org/web/20120908040212/http://www.section520.org/car.html" title="4:02:12 Sep 8, 2012" style="border: medium none ; background-color: transparent;"><img src="wm_tb_prv_on.png" alt="Previous capture" border="0" height="16" width="14"></a> </td>
+<td id="displayDayEl" style="padding: 2px 0pt 0pt; background: rgb(0, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 255, 0); width: 34px; height: 24px; text-align: center; font-size: 24px; font-weight: bold;" title="You are here: 15:17:44 Oct 15, 2012">15</td>
+<td style="padding-left: 9px; white-space: nowrap; overflow: visible; text-align: left ! important; vertical-align: middle ! important;" nowrap="nowrap"> <img src="wm_tb_nxt_off.png" alt="Next capture" border="0" height="16" width="14"> </td>
+</tr>
+<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR --> <tr style="width: 110px; height: 13px; font-size: 9px ! important;">
+<td style="padding-right: 9px; font-size: 11px ! important; font-weight: bold; text-align: right; white-space: nowrap; overflow: visible;" nowrap="nowrap"> <a href="http://web.archive.org/web/20110908033943/http://www.section520.org/car.html" style="border: medium none ; text-decoration: none; color: rgb(51, 51, 255); font-weight: bold; background-color: transparent;" title="8 Sep 2011"><strong>2011</strong></a>
+</td>
+<td id="displayYearEl" style="background: rgb(0, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 255, 0); font-size: 11px ! important; font-weight: bold; padding-top: 1px; width: 34px; height: 13px; text-align: center;" title="You are here: 15:17:44 Oct 15, 2012">2012</td>
+<td style="padding-left: 9px; font-size: 11px ! important; font-weight: bold; white-space: nowrap; overflow: visible;" nowrap="nowrap"> 2013 </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0pt ! important; vertical-align: middle;"> <a href="http://web.archive.org/web/20121015151744*/http://www.section520.org/car.html" style="border: medium none ; color: rgb(51, 51, 255); font-size: 11px; font-weight: bold; background-color: transparent;" title="See a list of every capture for this URL"><strong>28
+captures</strong></a>
+<div style="margin: 0pt ! important; padding: 2px 0pt 0pt ! important; color: rgb(102, 102, 102); font-size: 9px; white-space: nowrap;" title="Timespan for captures of this URL">17 Aug 03 - 15 Oct
+12</div>
+</td>
+<td style="padding: 0pt ! important;"> <a style="position: relative; white-space: nowrap; width: 450px; height: 27px;" href="" id="wm-graph-anchor">
+<div id="wm-ipp-sparkline" style="border-right: 1px solid rgb(204, 204, 204); position: relative; white-space: nowrap; width: 450px; height: 27px; background-color: rgb(255, 255, 255); cursor: pointer;" title="Explore captures for this URL"> <img id="sparklineImgId" style="position: absolute; z-index: 9012; top: 0px; left: 0px;" onmouseover="showTrackers('inline');" onmouseout="showTrackers('none');" onmousemove="trackMouseMove(event,this)" alt="sparklines" src="car_files/graph.png" border="0" height="27" width="450"> <img id="wbMouseTrackYearImg" style="display: none; position: absolute; z-index: 9010;" src="transp-yellow-pixel.png" border="0" height="27" width="25"> <img id="wbMouseTrackMonthImg" style="display: none; position: absolute; z-index: 9011;" src="transp-red-pixel.png" border="0" height="27" width="2"> </div>
+</a> </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="padding: 5px; text-align: right; width: 65px; font-size: 11px ! important;">
+<a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="border: medium none ; background: transparent url(/static/images/toolbar/wm_tb_close.png) no-repeat scroll 100% 0pt; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; display: block; padding-right: 18px; color: rgb(51, 51, 255); font-family: 'Lucida Grande','Arial',sans-serif; margin-bottom: 23px;" title="Close the toolbar">Close</a> <a href="http://faq.web.archive.org/" style="border: medium none ; background: transparent url(/static/images/toolbar/wm_tb_help.png) no-repeat scroll 100% 0pt; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; display: block; padding-right: 18px; color: rgb(51, 51, 255); font-family: 'Lucida Grande','Arial',sans-serif;" title="Get some help using the Wayback Machine">Help</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+&nbsp;&nbsp;<br>
+<center style="color: rgb(153, 0, 0);"><font size="+4"><img style="width: 995px; height: 708px;" alt="" src="Ashampoo_Snap_2013.07.14_15h41m50s_005_.png"><br></font><br><img style="width: 76px; height: 31px;" alt="" src="spacer.png"><br><br><big style="color: black;"><big><big>-
+"<span style="font-family: Times New Roman,Times,serif;">D</span></big><span style="font-family: Times New Roman,Times,serif;">RIVING" A </span><big style="font-family: Times New Roman,Times,serif;">M</big><span style="font-family: Times New Roman,Times,serif;">OTOR </span><big style="font-family: Times New Roman,Times,serif;">V</big><span style="font-family: Times New Roman,Times,serif;">EHICLE
+IS A </span><big style="font-family: Times New Roman,Times,serif;">T<small>AXED</small>
+<small>&amp;</small>
+R<small>EVOCABLE</small> C</big><span style="font-family: Times New Roman,Times,serif;">OMMERCIAL </span><big style="font-family: Times New Roman,Times,serif;">P</big><span style="font-family: Times New Roman,Times,serif;">RIVILEGE</span>
+<big>-</big></big></big>
+
+<p style="text-align: center; color: black;"><big><big><big>-
+T<small>HE</small> L<small>ICENSE</small> P<small>ERMITS</small>
+T<small>HE</small> H<small>OLDER</small> B<small>EING</small>
+C<small>OMPENSATED</small> B<small>Y</small> P<small>ASSENGERS
+<big>-</big></small></big></big></big></p>
+<p style="text-align: center; color: black;"><big><big><big>-
+A L<small>ICENSE</small> I<small>S</small> R<small>EQUIRED</small>
+T<small>O</small> E<small>NGAGE</small> I<small>N</small>
+C<small>OMMERCE <big>-</big></small></big></big></big></p>
+<p style="text-align: center; color: black;"><big><big><big><small><big>-
+C<small>OMMERCIAL</small> C<small>ONTRACTORS</small>
+M<small>UST</small> B<small>E</small> L<small>ICENSED
+<big>-</big></small></big></small></big></big></big></p>
+<p style="text-align: center; color: black;"><big><big><big>-
+P<small>ASSENGERS</small> P<small>AY</small> A F<small>ARE</small>
+T<small>O</small> B<small>E</small> T<small>RANSPORTED
+<big>-</big></small></big></big></big></p>
+<p style="text-align: center; color: black;"><big><big><big><small><big><big><small>-
+T<small>HEIR</small> E<small>QUIPMENT</small> M<small>UST</small>
+B<small>E</small> R<small>EGISTERED <big>-</big></small></small></big></big></small></big></big></big></p>
+<p style="text-align: center; color: black;"><big><big><big>-
+D<small>RIVING</small> I<small>S</small> C<small>OMMERCIAL</small>
+A<small>CTIVITY <big>-</big></small></big></big></big></p><p style="text-align: center; color: black;"><big><big><big><small><big>- D<small>RIVING</small> I<small>S</small> A P<small>ROFESSION</small> -</big></small></big></big></big></p><p style="text-align: center; color: black;"></p><p style="text-align: center; color: black;"></p><p style="text-align: center; color: black;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p><font size="+4"><small><small><small>
+
+</small></small></small></font></center><center style="font-family: Calibri;"><big><font size="+2"><big><span style="font-weight: bold;"><br>- YOU NEED THE STATE'S
+PERMISSION (LICENSE) TO ENGAGE IN THE PROFESSION! -</span></big></font>
+</big></center>
+<blockquote>
+
+<blockquote>
+<div style="text-align: center;"><br><img style="width: 441px; height: 271px;" alt="" src="ScreenShot014.jpg"><br>
+</div>
+<font face=" Helvetica,Arial,sans-serif"><font size="+2"><br>
+<span style="font-family: Calibri;">“</span><u style="color: red; font-family: Calibri; font-weight: bold;">The
+activity licensed by state DMVs</u><span style="font-family: Calibri;"> &nbsp;-&nbsp; </span><u style="color: red; font-family: Calibri; font-weight: bold;">the
+operation of motor
+vehicles</u><span style="font-family: Calibri;">&nbsp;
+- &nbsp;</span><u style="color: red; font-family: Calibri; font-weight: bold;">is
+itself integrally related to interstate commerce</u><span style="font-family: Calibri;">”.</span></font></font><span style="font-family: Calibri;"> </span><br style="font-family: Calibri;">
+<font style="font-family: Calibri;" face=" Helvetica,Arial,sans-serif"><font size="+2">Seth
+Waxman, Solicitor
+General</font></font><span style="font-family: Calibri;"> </span><br style="font-family: Calibri;">
+<font style="font-family: Calibri;" face=" Helvetica,Arial,sans-serif"><font size="+2">U.S.
+Department of
+Justice</font></font><span style="font-family: Calibri;"> </span><br style="font-family: Calibri;">
+<a style="font-weight: bold;" href="http://www.justice.gov/osg/briefs/1999/3mer/2mer/98-1464.mer.aa.html"><font style="font-family: Calibri;" face=" Helvetica,Arial,sans-serif"><font size="+2">B<small>RIEF</small>
+<small>FOR</small> <small>THE</small>
+P<small>ETITIONERS</small></font></font></a><span style="font-family: Calibri; font-weight: bold;"> <span style="color: red;">* &nbsp;<span style="color: black;">(click to download)</span></span></span><br style="font-family: Calibri;">
+<font style="font-family: Calibri;" face=" Helvetica,Arial,sans-serif"><font size="+2"><span style="font-weight: bold; font-style: italic;">Reno
+v. Condon</span>, 528 U.S. 141, January 12, 2000</font></font><span style="font-family: Calibri;"> </span><br style="font-family: Calibri;">
+<font face=" Helvetica,Arial,sans-serif"><font size="+2"><span style="font-family: Calibri;">Supreme
+Court of the
+United States<br><br><small>(<span style="color: red;">*</span> The Supreme Court <span style="font-weight: bold;">DID NOT USE</span>
+that exact language in their holding. &nbsp;But because the Supreme
+Court found in favor of US Inc. they ACKNOWLEDGED what US Inc asserted
+in their Brief, DRIVING IS COMMERCIAL ACTIVITY REQUIRING A LICENSE (the State's permission)!)</small><br></span>
+</font></font></blockquote>
+</blockquote>
+<div style="text-align: center;"><img style="width: 300px; height: 171px;" alt="" src="cab.jpg"><br>
+<br style="font-weight: bold;">
+<big style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">A DRIVER OF ONE OF THESE GETS PAID TO TAKE PASSENGERS FROM POINT A TO POINT B.&nbsp;&nbsp; <br>A PASSENGER PAYS TO BE TAKEN FROM POINT A TO POINT B.<br><br><img style="width: 995px; height: 495px;" alt="" src="stage%20coach.png"><br></big><big style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">A
+DRIVER OF ONE OF THESE GETS PAID TO TAKE PASSENGERS FROM POINT A TO
+POINT B.&nbsp;&nbsp; <br>A PASSENGER PAYS TO BE TRANSPORTED FROM POINT A TO POINT B.<br><br><br><br><img style="width: 650px; height: 404px;" alt="" src="ups%20truk.jpg"><br><br></big><big style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">A
+DRIVER OF ONE OF THESE GETS PAID TO TRANSPORT STUFF FROM POINT A TO
+POINT B.&nbsp;&nbsp; <br><br><br><img style="width: 593px; height: 266px;" alt="" src="bus.bmp"><br><br></big><big style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">A
+DRIVER OF ONE OF THESE GETS PAID TO TRANSPORT PASSENGERS FROM POINT A TO
+POINT B.&nbsp;&nbsp; <br>A PASSENGER PAYS TO BE TRANSPORTED FROM POINT A TO POINT B.<br><br><br><img style="width: 699px; height: 471px;" alt="" src="cattle%20driver.png"><br><br>THE GUY WITH THE WHIP IS A DRIVER. &nbsp; HE GETS PAID TO DRIVE STUFF FROM POINT A TO POINT B.<br><br></big><p style="text-align: center; color: black;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p><br></div>
+<blockquote><blockquote><div style="text-align: center;"><small><font size="+2"><small><strong><big style="font-family: Calibri;"><big>- IT'S A CRIME TO ENGAGE IN THE PROFESSION WITHOUT A LICENSE -</big></big></strong></small></font></small><small><font size="+2"><small><strong></strong></small></font></small><small><font size="+2"><small><strong><span style="font-family: Helvetica,Arial,sans-serif;"><br></span></strong></small></font><font size="+2"><small><strong>&nbsp;</strong></small></font></small><big><span style="font-weight: bold;"></span></big></div></blockquote></blockquote><div style="text-align: center;"><big style="font-weight: bold;"><span style="font-family: Calibri;">CALIFORNIA BUSINESS AND PROFESSIONS CODE</span><br><span style="font-family: Calibri;">SECTION 7025 - 7034</span></big><br><span style="font-family: Calibri;"></span></div><span style="font-family: Calibri;"><br></span><div style="margin-left: 40px;"><div style="margin-left: 280px;"><big><span style="font-family: Calibri;"><span style="font-weight: bold;">7028.&nbsp; (a)</span> It is a misdemeanor for a person to engage in the business or act in the capacity of a contractor within this state <br>without having a license therefor, unless the person is particularly exempted from the provisions of this chapter.</span></big><br></div><span style="font-family: Calibri;"></span></div><span style="font-family: Calibri;"><br></span><div style="text-align: center;"><big style="font-weight: bold;"><span style="font-family: Calibri;">CALIFORNIA VEHICLE CODE</span><br><span style="font-family: Calibri;">SECTION 12500 - 12527</span></big><br><span style="font-family: Calibri;"></span></div><span style="font-family: Calibri;"><br></span><div style="margin-left: 320px;"><big><span style="font-family: Calibri;"><span style="font-weight: bold;">12500.&nbsp; (a)</span> A person may not drive a motor vehicle upon a highway, unless the person then holds a valid driver's license <br>issued under this code, except those persons who are expressly exempted under this code</span></big></div><blockquote><blockquote><p style="text-align: center;"><img style="width: 1400px; height: 652px;" alt="" src="Snap_2012.12.01_17h33m38s_002_.png"></p><p style="text-align: center;"><big><a href="http://dmv.ca.gov/pubs/vctop/lov/lovd6.htm">http://dmv.ca.gov/pubs/vctop/lov/lovd6.htm</a></big></p><big style="font-family: Calibri;"><br>"Section
+250 . . . "(a) It is a misdemeanor&nbsp; for any person to drive a
+motor vehicle upon a highway unless he then holds a valid operator's or
+chauffeur's license . . . .."&nbsp; . . . . driving privileges--of
+which the&nbsp; license is but evidence (People v. Noggle (1935), 7
+Cal.App.2d 14, 17,&nbsp; [45 P.2d 430, 432]).<br><span style="font-weight: bold; font-style: italic;">People v. Higgins</span> (1948) 97 Cal.App.2d Supp. 938<br><br>A license proper is a permit to do business which could not be done without the license.<br><span style="font-weight: bold; font-style: italic;">CITY AND COUNTY OF SAN FRANCISCO v. LIVERPOOL AND LONDON AND GLOBE INSURANCE COMPANY et al</span>. (1887), 74 Cal. 113<br><br></big><big style="font-family: Calibri;"><span style="font-weight: bold;"><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"> &nbsp; &nbsp;</span></big><big style="font-family: Calibri;"><span style="font-weight: bold;">Before
+1959 there were TWO types of license issued, one to OPERATORS and one
+to CHAUFFEURS . &nbsp; After 1959 there was only ONE type of license
+issued &nbsp;because the Legislature COMBINED the two types of license
+under one heading:</span><br><br></big><div style="text-align: center;"><big style="font-family: Calibri;"><img style="width: 436px; height: 108px;" alt="" src="Ashampoo_Snap_2013.06.28_15h54m13s_010_.png"><br><img style="width: 461px; height: 180px;" alt="" src="Ashampoo_Snap_2013.06.28_15h54m43s_011_.png"><br><img style="width: 1015px; height: 132px;" alt="" src="Ashampoo_Snap_2013.06.28_15h56m41s_013_.png"><br><big style="font-weight: bold;">page 1531</big><br></big></div><big style="font-family: Calibri;"><br style="font-weight: bold;"><span style="font-weight: bold;">Remember, BOTH operators and chauffeurs are involved in COMMERCE/BUSINESS., they get paid to go from Point A to Point B. </span><br><br>In
+California, a license is defined as&nbsp; "A&nbsp; permit,
+granted&nbsp; by an appropriate governmental body, generally for a
+consideration, to a person or firm, or corporation to pursue some
+occupation or to carry on some business subject to regulation under the
+police power. <span style="font-weight: bold; font-style: italic;"><br>Rosenblatt v. California</span>, 158 P2d 199, 300.<br><br>The
+Garcia court quoted Lambert v. California (1957) 355 U.S. 225, 227 [78
+S.Ct. 240, 242][involving registration for convicted felons] as
+follows: “‘Many [registration] laws are<br>akin to licensing statutes in that they pertain to the regulation of business activities.<br><span style="font-weight: bold; font-style: italic;">People v. Garcia</span> (2001) 25 Cal.4th 744<br><br>"We
+have said, and we reiterate, that a license is merely a privilege to do
+business and is not a contract&nbsp; between the authority granting it
+and the grantee, nor is it a property right. See syllabus by the court,
+No. 4,&nbsp; Prettyman Inc. v. Florida Real Estate Commission ex rel.
+Branham, 92 Fla. 515, 109 So. 442."<br><span style="font-weight: bold; font-style: italic;">Mayo et al. v. Market Fruit Co. of Sanford, Inc</span>. (1949) 40 So.2d 555<br><br>“A
+license is in the general nature of a special privilege, entitling the
+licensee to do something that he would not be entitled to do without
+the license”.<br><span style="font-weight: bold;">51 Am. Jur.2d., LICENSES AND PERMITS</span>, PART ONE, GENERAL PRINCIPLES,&nbsp; I. GENERAL, §1. Generally, p. 7<br><br></big></blockquote>
+</blockquote><div style="text-align: center; font-family: Calibri;"><p style="text-align: center; font-family: Calibri;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png">&nbsp;<span style="font-weight: bold;"></span></p><p style="text-align: center; font-family: Calibri;"><span style="font-weight: bold;"></span></p><p style="text-align: center; font-family: Calibri;"><big><big><big><span style="font-weight: bold;">- A MOTOR VEHICLE IS A DEVICE USED FOR COMMERCIAL PURPOSES -</span></big></big></big></p><big><big><big><big><small><small><span style="font-weight: bold;"><br>Code of Federal Regulations</span><br><br></small></small></big></big></big></big><big><big><big><small><small>Title 49, Volume 4, Parts 200 to 399</small></small></big></big></big><br><big><big><big><small><small>Revised as of October 1, 1999</small></small></big></big></big><br><big><big><big><small><small></small></small></big></big></big><big><big><big><small><small>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </small></small></big></big></big><br><big><big><big><small><small>Page 859 - 865</small></small></big></big></big><br><big><big><big><small><small>&nbsp;</small></small></big></big></big><br><big style="font-weight: bold;"><big><big><big><small><small>TITLE 49 -- TRANSPORTATION</small></small></big></big></big></big><br><br><big><big><big><small><small>CHAPTER III -- FEDERAL HIGHWAY ADMINISTRATION,</small></small></big></big></big><br><br><big><big><big><small><small>DEPARTMENT OF TRANSPORTATION</small></small></big></big></big><br><big><big><big><small><small>&nbsp;</small></small></big></big></big><br><big><big><big><small><small>PART 390 -- FEDERAL MOTOR CARRIER SAFETY REGULATIONS; GENERAL</small></small></big></big></big><br><big><big><big><small><small>&nbsp;</small></small></big></big></big><br><big><big><big><small><small>Subpart A -- General Applicability and Definitions<br></small></small></big></big></big></div><span style="font-family: Calibri;"><br></span><div style="margin-left: 80px;"><big><span style="font-family: Calibri; font-weight: bold;">Sec. 390.5&nbsp; Definitions.</span><br><span style="font-family: Calibri;"></span><br></big><div style="margin-left: 40px;"><big><span style="font-family: Calibri;"><span style="font-weight: bold; text-decoration: underline; color: red;">Driver means</span> any person who operates any commercial motor vehicle.</span></big><br><big><span style="font-family: Calibri;"></span></big><br style="font-weight: bold; text-decoration: underline; color: red;"><big><span style="font-family: Calibri;"><span style="font-weight: bold; text-decoration: underline; color: red;">Interstate commerce means</span> trade, <span style="font-weight: bold; text-decoration: underline; color: red;">traffic</span>, or transportation in the United States--</span></big><br><big><span style="font-family: Calibri;"></span></big><br><big><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;
+(1) Between a place in a State and a place outside of such State
+(including a place outside of the United States);</span></big><br><big><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; (2) Between two places in a State through another State or a place outside of the United States; or</span></big><br><big><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp; (3) Between two places in a State as part of trade, traffic, or transportation</span></big><br><big><span style="font-family: Calibri;"></span></big><br><big><span style="font-family: Calibri;"><span style="font-weight: bold; text-decoration: underline; color: red;">Intrastate commerce means</span> any trade, <span style="font-weight: bold; text-decoration: underline; color: red;">traffic</span>, or transportation in any State which is not described in the term ``interstate commerce.''</span></big><br><big><span style="font-family: Calibri;"></span></big><br><big><span style="font-family: Calibri;"><span style="font-weight: bold; text-decoration: underline; color: red;">Motor vehicle means any vehicle</span>, machine, tractor, trailer, or semitrailer propelled or drawn by mechanical power and <span style="font-weight: bold; text-decoration: underline; color: red;">used upon the highways in the transportation of passengers or property,</span></span></big><br><big><span style="font-family: Calibri;"></span></big><br><big><span style="font-family: Calibri;">Operator -- See driver.</span></big><br></div><big><span style="font-family: Calibri;"></span><br><span style="font-family: Calibri;"></span><br><span style="font-family: Calibri; font-weight: bold;">CALIFORNIA VEHICLE CODE</span><br style="font-weight: bold;"><span style="font-family: Calibri; font-weight: bold;">&nbsp;&nbsp; </span><br style="font-weight: bold;"><span style="font-family: Calibri;"><span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 415.&nbsp; (a)</span>&nbsp; A "motor vehicle" is a vehicle...</span><br><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br><span style="font-family: Calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">&nbsp; 670.</span>&nbsp;&nbsp; A "vehicle" is a device...</span></big><br><span style="font-family: Calibri;"></span></div><div style="text-align: center; font-family: Calibri;"><big style="font-family: Calibri;"><b><font size="+1"><big><br>Title
+18, United States Code, Sec. 31</big></font></b> </big><br style="font-family: Calibri;">
+<font style="font-family: Calibri;"><font size="+1">PART
+I - CRIMES</font></font><span style="font-family: Calibri;"> </span><br style="font-family: Calibri;">
+<font style="font-family: Calibri;"><font size="+1">CHAPTER
+2 - AIRCRAFT
+AND <b><u>MOTOR VEHICLES</u></b></font></font><span style="font-family: Calibri;"> </span><br></div>
+
+<p style="margin-left: 80px; font-family: Calibri;"><big><font style="font-weight: bold; font-family: Calibri;"><font size="+1"><big><small>Sec.
+31. Definitions</small> </big></font></font></big><font style="font-family: Helvetica,Arial,sans-serif;"><font size="+1"><span style="font-weight: bold;"><span style="font-family: Calibri;"></span></span></font></font></p><p style="margin-left: 80px; font-family: Calibri;"><font style="font-family: Helvetica,Arial,sans-serif;"><font size="+1"><span style="font-weight: bold;"><span style="font-family: Calibri;">When used in this chapter
+the term</span> &nbsp;-</span><span style="font-weight: bold;"> </span>&nbsp;</font></font></p>
+<div style="margin-left: 40px; font-family: Calibri;"><div style="margin-left: 80px;"><font style="font-family: Calibri; font-weight: bold;" size="+1">'<span style="text-decoration: underline; color: red;">'Motor
+vehicle'' means every description of carriage or other</span></font><span style="font-weight: bold; text-decoration: underline; color: red;"> </span><font style="font-family: Calibri;" size="+1"><span style="font-weight: bold; text-decoration: underline; color: red;">contrivance</span>
+propelled or drawn by mechanical power and <u style="font-weight: bold; color: red;">used for
+commercial
+purposes</u>
+<br>on the highways <span style="font-weight: bold; text-decoration: underline; color: red;">in the transportation of
+passengers,
+passengers and property, or property or cargo</span>. &nbsp;''<span style="font-weight: bold; text-decoration: underline; color: red;">Used for commercial
+purposes'' means the carriage <br>of persons or property for any fare, fee,
+rate, charge or other consideration</span>, or directly or indirectly in
+connection with any business, or other undertaking <br>intended for profit;</font><br></div><span style="font-weight: bold;"></span><big style="font-family: Calibri;"><span style="font-weight: bold;"></span></big><br></div><big style="font-family: Calibri;"><span style="font-weight: bold;"><br><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALIFORNIA VEHICLE CODE</span>
+&nbsp;<span style="font-weight: bold;">§15210 (p) (8)</span>&nbsp; In the absence of a federal definition,
+existing definitions under this code shall apply.</big>
+<div style="text-align: center; font-family: Calibri;"><br><big><br>Driving a vehicle and being in actual control of a vehicle are not synonymous. <br><span style="font-weight: bold; font-style: italic;">&nbsp;Mercer v. Department of Motor Vehicles</span> (1991) 53 Cal.3d 753.</big><br><br>
+</div>
+<div style="text-align: center; font-family: Calibri;"><a href="http://section520.org/test.html"><small><font style="font-family: Helvetica,Arial,sans-serif;" size="+3"><small>-
+Take
+This 12
+Question Test </small></font><font size="+3"><small>To Determine If You "DRIVE"</small></font><font size="+2"><small> </small></font><font size="+3"><small>-</small></font></small></a><br>
+</div>
+<center><div style="text-align: left;"><div style="text-align: center;">
+<blockquote style="margin-left: 80px; font-family: Calibri;"><font size="+2"><br><img style="width: 315px; height: 221px;" alt="" src="Ashampoo_Snap_2013.07.16_12h00m28s_003_.png"><br><br>The
+organic
+law is
+the constitution of government, and is altogether written.</font>
+<br>
+<font size="+1">CALIFORNIA
+CODE OF CIVIL
+PROCEDURE, Sec. 1897<br>
+</font></blockquote>
+<div style="text-align: left; margin-left: 80px; font-family: Helvetica,Arial,sans-serif;"><big style="font-family: Calibri;">B.&nbsp;
+Constitution of California<br>
+<br>
+&nbsp;&nbsp;&nbsp; 2.&nbsp; ['51]&nbsp; Restrictive
+and Enabling Provisions<br>
+<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; (a) Restrictions on State
+Powers.&nbsp; The
+California Constitution, like other state constitutions, is generally a
+restriction upon the powers of the state.<br>
+<br>
+Summary of California Law, vol 7, Constitutional Law, p. 9<br>
+<br>
+...the
+state Constitution, as distinguished from the federal Constitution,
+does not constitute a grant of power, or an enabling act, to the <br>
+legislature, but rather constitutes a limitation upon the powers of
+that body....<br>
+<span style="font-weight: bold; font-style: italic;">Fitts
+v. Superior Court</span>, 6 Cal.2d 230<br>
+[L. A. No. 15256. In Bank. April 30, 1936.]<br>
+<br>
+...the
+fact that our Constitution is not a grant of power but rather a
+limitation or restriction upon the powers of the Legislature (In re
+Madera Irr. <br>
+Dist., 92 Cal. 296 [28 P. 272, 675, 29 Am.St.Rep. 106,
+14 L.R.A. 755]; Macmillan Co. v. Clarke, 184 Cal. 491 [194 P. 1030, 17
+A.L.R. 288]; <br>
+People ex rel. Smith v. Judge of the Twelfth
+District, 17 Cal. 547; Sheehan v. Scott, 145 Cal. 684 [79 P. 350];
+Fitts v. Superior Court, 6 Cal.2d <br>
+230 [57 P.2d 510]; Mitchell v.
+Winnek, 117 Cal. 520 [49 P. 579]) and "that we do not look to the
+Constitution to determine whether the <br>
+Legislature is authorized to do an act, but only to see if it is
+prohibited." (Fitts v. Superior Court, supra.)<br>
+<br>
+</big><big style="font-family: Calibri;">Such
+restrictions and limitations are to be construed strictly, and are not
+to be extended to include matters not covered by the language used.</big><br style="font-family: Calibri;">
+<big><span style="font-weight: bold; font-style: italic; font-family: Calibri;">Collins
+v. Riley</span><span style="font-family: Calibri;">, 24 Cal.2d 912</span><br style="font-family: Calibri;"><span style="font-family: Calibri;">
+[S. F. No. 17019. In Bank. Oct. 2, 1944.]</span><br style="font-family: Calibri;">
+<br style="font-family: Calibri;"><span style="font-family: Calibri;">
+...our
+Constitution "is, and always has been, a document of independent force.
+Any other result would contradict not only the most fundamental
+principles of federalism but also the historic bases of state
+charters." (People v. Brisendine (1975) 13 Cal.3d 528, 549-550 [119
+Cal.Rptr. 315, 531 P.2d 1099].) Indeed, article I, section 24, of the
+California Constitution provides: "Rights guaranteed by this
+Constitution are not dependent on those guaranteed by the United States
+Constitution."</span><br style="font-family: Calibri;">
+<span style="font-weight: bold; font-style: italic; font-family: Calibri;">People
+v. Rivera</span><span style="font-family: Calibri;"> (1981) 127 Cal.App.3d 136<br><br>Both the police we honor and the criminals we prosecute are subject to the same binding Constitution.<br><span style="font-weight: bold; font-style: italic;">SMITH v. CITY OF HEMET</span>, 394 F.3d 689 (9th Cir. 2005) (en banc)<br><br>The
+primary purpose of a constitution is to place limitations upon the
+legislative authority as well as upon the powers of its co-ordinate
+branches of government. <br><span style="font-weight: bold; font-style: italic;">Allen v. State Board of Equalization</span>, 43 Cal.App. 2d 90<br>&nbsp;&nbsp;&nbsp; <br>Obviously,
+administrative agencies, like police officers must obey the
+Constitution and may not deprive persons of constitutional rights.<br><span style="font-weight: bold; font-style: italic;">Southern Pac. Transportation Co. v. Public Utilities Com</span>., 18 Cal.3d 308<br>[S.F. No. 23217. Supreme Court of California. November 23, 1976.]<br><br>“The
+state constitution is the supreme law of the state,...”.&nbsp; “If
+there is any difference in meaning between the constitution and a
+statute, the constitution must prevail,...”. <br><span style="font-weight: bold;">&nbsp;13 Cal.Jur.3d</span> (Rev) §4, Part 1, p. 25<br style="font-family: Calibri;"></span>
+<br>
+<br>
+</big></div>
+</div>
+<div style="text-align: center;"><a style="font-family: Helvetica,Arial,sans-serif;" href="http://section520.org/calconstitution.html"><font size="+4">C</font><font size="+3">onstitution
+of the </font><font size="+4">S</font><font size="+3">tate of </font><font size="+4">C</font><font size="+3">alifornia,
+1849</font></a><a style="font-family: Helvetica,Arial,sans-serif;" href="http://section520.org/calconstitution.html">
+</a><br>
+<br><big><span style="font-family: Calibri; font-weight: bold;">Article I</span><br style="font-family: Calibri; font-weight: bold;"><br style="font-family: Calibri; font-weight: bold;"><span style="font-family: Calibri; font-weight: bold;">Sec. 1.</span><br style="font-family: Calibri; font-weight: bold;"><br style="font-family: Calibri; font-weight: bold;"></big><div style="text-align: left; margin-left: 200px; font-weight: bold;"><big><span style="font-family: Calibri;">All
+men are by nature free and independent, and have certain unalienable
+rights, among which are those of enjoying and defending&nbsp; life and
+liberty: <br>acquiring, possessing and &nbsp;protecting property: and pursuing and obtaining safety and happiness.</span><br style="font-family: Calibri;"></big></div><big><br style="font-family: Calibri; font-weight: bold;"><span style="font-family: Calibri; font-weight: bold;">Sec. 10.</span><br style="font-family: Calibri; font-weight: bold;"><br style="font-family: Calibri; font-weight: bold;"><span style="font-family: Calibri; font-weight: bold;">The people shall have the right freely to assemble together,...</span></big><br><br></div><div style="text-align: center;">
+<small><br style="font-family: Helvetica,Arial,sans-serif;"></small>
+<big><span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">"A
+statute does not trump the Constitution."</span></big><small><br style="font-family: Helvetica,Arial,sans-serif;"></small><big>
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">People
+v. Ortiz</span><span style="font-family: Helvetica,Arial,sans-serif;">, (1995) 32
+Cal.App.4th at p. 292, fn. 2</span></big><small><br style="font-family: Helvetica,Arial,sans-serif;"></small><big>
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Conway
+v. Pasadena Humane Society</span><span style="font-family: Helvetica,Arial,sans-serif;"> (1996) 45
+Cal.App.4th 163<br><span style="font-weight: bold; font-style: italic;">UNITED STATES OF AMERICA, v. JERRY ARBERT POOL</span>, C.A. No. 09-10303, <br>IN THE UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT <br>(Opinion filed September 14, 2010), On Appeal From The United <br>States District Court For The Eastern District of California<br></span></big><big><big>
+</big></big></div>
+<div style="margin-left: 40px;"><big><span style="font-family: Calibri; font-weight: bold;">VEHICLE CODE</span></big><br style="font-family: Calibri; font-weight: bold;"><big><span style="font-family: Calibri; font-weight: bold;">GENERAL PROVISIONS</span></big><br style="font-family: Calibri; font-weight: bold;"><big><span style="font-family: Calibri; font-weight: bold;">SHORT TITLE</span></big><br style="font-family: Calibri; font-weight: bold;"><br style="font-family: Calibri; font-weight: bold;"><big><span style="font-family: Calibri; font-weight: bold;">Pending Proceeding and Accrued Rights</span></big><br style="font-family: Calibri;"><br style="font-family: Calibri;"></div><div style="margin-left: 80px;"><big><span style="font-family: Calibri;"><span style="font-weight: bold;">4.</span>&nbsp;&nbsp;&nbsp; No action or proceeding commenced before this code takes effect, and <span style="font-weight: bold; text-decoration: underline; color: red;">no right accrued, is affected by the provisions of this code</span>, but all procedure thereafter taken therein shall conform to the provisions of this code so far as possible.</span></big><br style="font-family: Calibri;"></div><div style="margin-left: 40px;"><br style="font-family: Calibri;"><big><span style="font-family: Calibri;">It
+is settled that the streets of a city belong to the people of a state
+and the use thereof is an inalienable right of every citizen of the
+state.</span></big><br style="font-family: Calibri;"><big><span style="font-family: Calibri;"><span style="font-weight: bold; font-style: italic;">Whyte v. City of Sacramento</span>, 65 Cal. App. 534, 547, (1924)</span></big><br style="font-family: Calibri;"><big><span style="font-family: Calibri;"><span style="font-weight: bold; font-style: italic;">Escobedo v. State Dept. of Motor Vehicles</span>, 35 Cal.2d 870 (1950) </span></big><br></div><br><div style="text-align: center;"><img style="width: 712px; height: 85px;" alt="" src="Ashampoo_Snap_2013.09.24_20h49m16s_003_.png"><br><br><big style="font-weight: bold;"><img style="width: 12px; height: 12px;" alt="" src="BUL1D.GIF">&nbsp; &nbsp;<big>The California Official Reports page is provided by Lexis-Nexis to access California case law dating to 1850 free of charge! </big>&nbsp; </big><big style="font-weight: bold;"><img style="width: 12px; height: 12px;" alt="" src="BUL1D.GIF"></big><br><big style="font-weight: bold;"><br></big><br><a href="http://www.lexisnexis.com/clients/CACourts/"><img style="border: 0px solid ; width: 124px; height: 48px;" alt="" src="Clickherefedpulse2.gif"></a><br><br><br><img style="width: 76px; height: 31px;" alt="" src="spacer.png"><br>
+</div><p style="font-family: Helvetica,Arial,sans-serif; text-align: center;"><a href="http://section520.org/CARQUESTIONS.html"><font size="+2">- </font><font size="+3">U</font><font size="+2">nalienable
+</font><font size="+3">R</font><font size="+2">ight </font><font size="+3">T</font><font size="+2">o </font><font size="+3">U</font><font size="+2">se </font><font size="+3">Y</font><font size="+2">our </font><font size="+3">C</font><font size="+2">ar w/o </font><font size="+3">A
+L</font><font size="+2">icense -</font></a></p></div>
+<img style="width: 76px; height: 31px;" alt="" src="spacer.png"><br style="font-family: Helvetica,Arial,sans-serif;">
+<p style="font-family: Helvetica,Arial,sans-serif;"><small><font size="+3"><small><a href="http://www.section520.org/carstuff.html">Do
+I use a
+"motor vehicle" to get from Point A to Point B?</a></small></font></small></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><small><font size="+3"><small><a href="http://www.section520.org/traffic.html">Are
+You
+Involved in "TRAFFIC" when you use your car?</a></small></font></small></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><big><a href="http://www.section520.org/deflicense.html"><font size="+3"><big><b>-
+</b>D</big></font><font size="+2"><big>efinition
+of&nbsp; "</big></font><font size="+3"><big>L</big></font><font size="+2"><big>icense"
+</big></font><b><font size="+3"><big>-</big></font></b>
+</a></big><br>
+&nbsp;</p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"> </p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://www.section520.org/sample.html">&nbsp;<font size="+3">SAMPLE
+INQUIRY LETTER</font>
+<br>
+<font size="+3">To
+the D<small>IRECTOR</small> of the DMV</font></a></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://www.section520.org/97202.html">&nbsp;<font size="+3">&nbsp;
+C</font><font size="+2">alifornia </font><font size="+3">A</font><font size="+2">ttorney
+</font><font size="+3">G</font><font size="+2">eneral's
+</font><font size="+3">O</font><font size="+2">pinion&nbsp;&nbsp;</font>
+<br>
+<font size="+3">97-202</font>
+<br>
+<font size="+2">re
+<u>who
+"owns"
+your car</u></font> </a>
+<br>
+<b style="color: rgb(153, 0, 0);"><font size="+1">Thank
+you Mr. Jones for
+finding this!</font></b></p>
+<p style="font-family: Helvetica,Arial,sans-serif;">&nbsp;<img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><big><b style="color: rgb(153, 0, 0);"><font size="+1"><big>Did
+they take your car?</big></font></b></big></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><big><b style="color: rgb(153, 0, 0);"><font size="+1"><big>Who's
+required to pay TOWING &amp; STORAGE fees?</big></font></b></big></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><big style="font-weight: bold; color: rgb(153, 0, 0);"><big>Click
+<a href="http://www.section520.org/CA%20AG%20Opps%20TOWING%20FEES.pdf">Here</a>
+To Learn Who And Under What Circumstances</big></big></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://www.geocities.com/CapitolHill/Senate/4417/vehiclecertorig.html"><font size="+4">W</font><font size="+3">hat's a:</font>
+<br></a>
+<a href="http://www.geocities.com/CapitolHill/Senate/4417/vehiclecertorig.html"><small><font size="+4"><small>V</small></font></small><font size="+2">ehicle </font><small><font size="+4"><small>M</small></font></small><font size="+2">anufacturer's
+</font><small><font size="+4"><small>C</small></font></small><font size="+3"><small>ertificate</small>/</font><small><font size="+4"><small>S</small></font></small><font size="+3"><small>tatement</small> </font><font size="+2">of
+</font><small><font size="+4"><small>O</small></font></small><font size="+2">rigin,</font> <br></a>
+<a href="http://www.geocities.com/CapitolHill/Senate/4417/vehiclecertorig.html"><font size="+2">and where's yours</font><b><font size="+3">?</font></b></a></p>
+<img style="width: 76px; height: 31px;" alt="" src="spacer.png">
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://www.section520.org/mso.html"><font size="+4">M</font><font size="+3">anufacturer's
+</font><font size="+4">S</font><font size="+3">tatement of </font><font size="+4">O</font><font size="+3">rigin</font>
+<br>
+<font size="+3">-
+Key To Ownership
+Of Your Car -</font></a>
+</p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;">&nbsp;<a href="http://www.usdoj.gov/osg/briefs/1999/3mer/2mer/98-1464.mer.aa.html"><font size="+4">&nbsp; R</font><font size="+3">eno
+v. </font><font size="+4">C</font><font size="+3">ondon</font><font size="+2">, </font><font size="+4">N</font><font size="+3">o</font><font size="+2">. </font><font size="+3">98 -
+1464&nbsp;&nbsp;</font> <br><font size="+2">BRIEF
+FOR THE PETITIONERS</font></a>
+ </p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://www.usdoj.gov/osg/briefs/1999/3mer/2mer/98-1464.mer.aa.html"><font size="+2">"...the
+operation of motor vehicles</font> <br><font size="+2">is
+itself integrally related to interstate commerce."</font></a>
+</p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p style="font-family: Helvetica,Arial,sans-serif;"><a href="http://section520.org/mvl.html"><small><font size="+4"><small>C</small></font><font size="+3"><small>ALIFORNIA
+</small></font><font size="+4"><small>M</small></font><font size="+3"><small>OTOR
+</small></font><font size="+4"><small>V</small></font><font size="+3"><small>EHICLE </small></font><font size="+4"><small>L</small></font><font size="+3"><small>EGISLATION</small></font>
+</small><br>
+<font size="+2">By</font>
+<br>
+<font size="+2">J.
+ALLEN DAVIS
+and HARRY
+V. CHESHIRE, JR.*</font> <br>
+<font size="+1">[Reprinted
+with
+Permission
+(66 West's Annotated California Codes 1-57 (1960))]</font>
+<br>
+<font size="+1">This
+history of
+California
+motor vehicle laws embraces the period 1900-1959.</font>
+<br>
+<font size="+3">A</font><font size="+2">nalysis</font>&nbsp;</a></p>
+<p>
+<br>
+<b><font size="+3"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"></font></b></p>
+<p style="color: rgb(153, 0, 0);"><font size="+3"><small><span style="font-family: Helvetica,Arial,sans-serif;">The
+Following Links Are To Selected Pages
+Of Image Files From</span></small></font><b style="font-family: Helvetica,Arial,sans-serif;"><font size="+3"><small>&nbsp;</small></font></b></p>
+<p><big style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;"><font size="+3">California
+Jurisprudence 2d</font></big><br>
+</p>
+<p><a href="http://section520.org/licensetax.html"><small><font size="+3"><small><small><small>Motor
+Transportation</small></small></small></font></small><br><font size="+3"><small><small><small>Carriers
+Of Property</small></small></small></font><br></a>
+
+<a href="http://web.archive.org/web/20121015151744/http://section520.org/licensetax.html"><font size="+3"><small><small><small></small></small></small></font></a><font size="+3"><small><small><small><a href="http://section520.org/licensetax.html">Exemptions
+From Regulation<br>
+License and License Tax</a><br>
+</small></small></small></font></p>
+<p><b><font size="+3"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"><br>
+</font></b> </p>
+<p><a href="http://www.section520.org/nojurisdiction.html"><font face=" Helvetica,Arial,sans-serif"><font size="+3">RE:
+JURISDICTION and the absence thereof,</font></font>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+3">Your
+Rights at a "TRAFFIC" or other "stop"</font></font></a>
+</p>
+</center>
+<blockquote style="font-family: Helvetica,Arial,sans-serif;">
+<blockquote><font size="+1">To the extent that
+such privilege exists
+under the Constitution of the United States or the State of California,
+a person has a privilege to refuse to disclose any matter that may tend
+to incriminate him.</font> <br>
+<font size="+1">Evidence Code Sec. 940.<br>
+</font></blockquote>
+</blockquote>
+<div style="text-align: left;"><br>
+<div style="text-align: center;"><font face=" Helvetica,Arial,sans-serif"><img style="width: 160px; height: 120px;" alt="" src="strobeth_animatedpolicecar.gif"></font><br>
+<br>
+<img style="width: 188px; height: 178px;" alt="" src="Cop%20Gives%20Ticket.PNG"><br>
+<big><big><br>
+<span style="color: rgb(153, 51, 0); font-family: Helvetica,Arial,sans-serif;">DID
+YOU GET A
+"TICKET"?</span></big><br style="color: rgb(153, 51, 0); font-family: Helvetica,Arial,sans-serif;">
+<big><span style="color: rgb(153, 51, 0); font-family: Helvetica,Arial,sans-serif;">YOU
+WERE
+"ARRESTED" - NOT "DETAINED" &nbsp;</span><br style="color: rgb(153, 51, 0); font-family: Helvetica,Arial,sans-serif;">
+<span style="color: rgb(153, 51, 0); font-family: Helvetica,Arial,sans-serif;">WANT
+THE PROOF?</span>
+&nbsp;</big></big><big><big><img style="width: 33px; height: 15px;" alt="" src="HAND02.GIF">&nbsp;</big></big><big><big>
+&nbsp;<a href="http://section520.org/points.html"><img style="border: 0px solid ; width: 76px; height: 26px;" alt="" src="click.gif"></a><br>
+<br>
+</big></big>
+<div style="text-align: left;">
+<div style="margin-left: 80px;"><big style="font-family: Helvetica,Arial,sans-serif;">One more
+thing
+before we begin: &nbsp;In addition to investigative detentions,
+there are two other <span style="text-decoration: underline; color: red;"><span style="font-weight: bold;">types of temporary seizures</span></span>.&nbsp;&nbsp;
+The first (and most common) is <span style="text-decoration: underline; color: red; font-weight: bold;">the
+traffic stop</span>.&nbsp;&nbsp; Although&nbsp; <span style="font-weight: bold; text-decoration: underline; color: red;">traffic
+stops are technically “arrests”</span> when (as is usually the
+case) the officer witnessed the violation and, therefore, had probable
+cause, traffic stops are subject to the
+same rules as investigative detentions.6</big><br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<big style="font-family: Helvetica,Arial,sans-serif;">“...traffic stops are technically ‘arrests’...”</big><br style="font-family: Helvetica,Arial,sans-serif;">
+<big style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">"Investigative
+Detentions</span>", Spring 2010 POINT OF VIEW, ALAMEDA COUNTY
+DISTRICT ATTORNEY’S OFFICE. p. 1<br><br>A
+traffic arrest occurs when an officer stops a vehicle after seeing the
+driver commit an infraction.&nbsp; ...the purpose of the stop is to
+enforce the law, not conduct an investigation.<br>“<span style="font-weight: bold;">Arrests</span>”, Spring 2009, POINT OF VIEW, ALAMEDA COUNTY DISTRICT ATTORNEY’S OFFICE<br></big>
+</div>
+<br>
+</div>
+</div>
+</div>
+<blockquote>
+<div style="text-align: center;"><a href="http://www.section520.org/easyriders.html"><font face=" Helvetica,Arial,sans-serif"><small><font size="+4"><small>E</small></font></small><font size="+2">ASYRIDERS</font><font size="+4">
+<small>F</small></font><font size="+2">REEDOM
+</font><small><font size="+4"><small>&nbsp;F.I.G.H.T.</small></font></small><font size="+2"> &nbsp;v </font><small><font size="+4"><small>&nbsp;H</small></font></small><font size="+2">ANNIGAN</font></font></a></div>
+<center><a href="http://www.section520.org/easyriders.html"><font face=" Helvetica,Arial,sans-serif"><font size="+2">U.S.
+9th
+Circuit
+Court of Appeals</font></font> <br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+2">(</font><font size="+1">When
+the RED light is activated on a cop car, you're UNDER
+ARREST!</font><font size="+2">)</font></font>
+</a> <br>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+2"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"><br>
+</font></font>&nbsp;<br>
+</center>
+</blockquote>
+<center><small><font face=" Helvetica,Arial,sans-serif"><a href="http://www.section520.org/infraction.html"><big><font size="+3">A</font><font size="+2">re </font><font size="+3">V</font><font size="+2">EHICLE </font><font size="+3">C</font><font size="+2">ODE "</font><font size="+3">I</font><font size="+2">NFRACTIONS"
+</font><font size="+3">C</font><font size="+2">ivil or </font><font size="+3">C</font><font size="+2">riminal
+in nature</font></big><font size="+3"><small>?</small></font></a><br>
+<br>
+</font></small><img style="width: 76px; height: 31px;" alt="" src="spacer.png">
+<p><a href="http://www.section520.org/oregon.html"><font face=" Helvetica,Arial,sans-serif"><small><font size="+4"><small>O</small></font></small><font size="+3">regon </font><small><font size="+4"><small>C</small></font></small><font size="+3">ourt
+of </font><small><font size="+4"><small>A</small></font></small><font size="+3">ppeals</font></font>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+3">Holds
+That
+"traffic matters" are Civil!</font></font></a>
+</p>
+<p><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<p><font face=" Helvetica,Arial,sans-serif"><font size="+3">
+<span style="color: rgb(153, 0, 0);">US</span><small style="color: rgb(153, 0, 0);"> </small><span style="color: rgb(153, 0, 0);">Supreme Court
+Holds That </span><br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">
+"Traffic Infractions" Are&nbsp; NONcriminal</span><br>
+</font></font></p>
+<h3 style="font-weight: normal;"><a href="http://caselaw.lp.findlaw.com/scripts/getcase.pl?court=us&amp;vol=466&amp;invol=740"><big><big>
+W<small>ELSH</small> <small>v.</small> W<small>ISCONSIN</small>,
+466
+U.S. 740 (1984)</big></big></a></h3>
+<img style="width: 76px; height: 31px;" alt="" src="spacer.png"><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+<big><br style="font-family: Helvetica,Arial,sans-serif;">
+</big></span>
+<div style="text-align: left;">
+<div style="margin-left: 40px;"><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"> &nbsp; &nbsp;<big><span style="font-family: Helvetica,Arial,sans-serif;">CALIFORNIA
+GOVERNMENT CODE</span></big><br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<div style="margin-left: 40px;">
+<div style="margin-left: 40px;"><big><span style="font-family: Helvetica,Arial,sans-serif;">13951(b)(1)
+Crime means a crime or public offense, wherever it may take place,</span></big><br>
+<big><span style="font-family: Helvetica,Arial,sans-serif;"></span></big></div>
+<big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span></big></div>
+<big><span style="font-family: Helvetica,Arial,sans-serif;"></span></big></div>
+<div style="margin-left: 40px;"><big><span style="font-family: Helvetica,Arial,sans-serif;"></span></big></div>
+<span style="font-family: Helvetica,Arial,sans-serif;"></span></div>
+<small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>V</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">EHICLE</font><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small> C</small></font><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">ODE</font><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small> I</small></font><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">NFRACTIONS</font><span style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;">
+</span><br style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;">
+<small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>A</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">RE </font><small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>N</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">OT </font><small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small><br>
+A</small></font></small><span style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;">
+</span><small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>&nbsp;C</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">RIME
+OR </font><small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>P</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">UBLIC </font><small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+4"><small>O</small></font></small><font style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;" size="+3">FFENSE<br>
+<br>
+</font><img style="width: 76px; height: 31px;" alt="" src="spacer.png"><br>
+<span style="font-family: Helvetica,Arial,sans-serif;"><big><big><big><span style="color: rgb(153, 0, 0);"><br>
+California
+Supreme Court
+Holds</span> </big></big></big></span><br>
+<p style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;"><big><big><big>That
+Infractions Are NONcriminal</big></big></big></p>
+<div style="text-align: left; margin-left: 40px;"><big><span style="font-family: Helvetica,Arial,sans-serif;">Since
+1992, the
+Vehicle Code has treated most parking violation notices as noncriminal
+matters, subject to civil penalties which are assessed, collected, and
+retained by the issuing jurisdictions (i.e., issuing agencies)
+themselves, pursuant to specified administrative
+procedures. The [17 Cal.4th 173] judicial system is involved only when
+a
+violation notice is appealed beyond the administrative level, or when
+administrative
+means of collecting delinquent penalties have failed.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<i style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">Lockheed
+Information
+Management Services
+Co. v. City of Inglewood</i><span style="font-family: Helvetica,Arial,sans-serif;"> (1998) 17
+Cal.4th 170</span></big>
+<br>
+</div>
+<div style="text-align: left; margin-left: 80px;"><br>
+</div>
+<div style="text-align: center; font-family: Helvetica,Arial,sans-serif;"><big style="color: rgb(153, 0, 0);"><big><big>The
+Court
+Of Appeal Of The State
+Of California
+<br>
+Holds That Infractions Are Not Crimes</big></big></big><br>
+</div>
+<div style="text-align: left; margin-left: 80px;"><br>
+</div>
+<div style="text-align: left; margin-left: 40px;"><big><span style="font-family: Helvetica,Arial,sans-serif;">“...infractions
+are
+not crimes...(People v. Battle (1975) 50 Cal.App.3d Supp. 1 [123
+Cal.Rptr. 636].) fn. 1 [1b] Proceedings on infractions are not attended
+by the same constitutional safeguards as those attending felony or
+misdemeanor prosecutions. &nbsp;The limitation on an accused's
+right to jury
+trial of infractions has withstood constitutional attack upon the
+rationale the Legislature did not intend to classify infractions as
+crimes. </span></big><br style="font-family: Helvetica,Arial,sans-serif;">
+<big><i style="font-family: Helvetica,Arial,sans-serif;"><b>People
+v. Sava</b></i><span style="font-family: Helvetica,Arial,sans-serif;"> (1987) 190
+Cal.App.3d 935</span></big><br style="font-family: Helvetica,Arial,sans-serif;">
+<big><span style="font-family: Helvetica,Arial,sans-serif;">[No.
+D005040. Court of Appeals of California, Fourth Appellate
+District, Division One. March 27, 1987.]</span></big>
+<br>
+</div>
+<p style="color: rgb(153, 0, 0); font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+<div style="text-align: left;">
+<div style="margin-left: 40px;"><span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;"><br>
+The
+Judicial Council Of The State Of California</span><span style="font-family: Helvetica,Arial,sans-serif;"> SPONSORED
+Legislation Making Minor Traffic Violations </span><span style="text-decoration: underline; font-family: Helvetica,Arial,sans-serif;">NONcriminal
+INFRACTIONS</span><span style="font-family: Helvetica,Arial,sans-serif;">.&nbsp;
+Go here&nbsp;</span><a style="font-family: Helvetica,Arial,sans-serif;" href="http://www.courts.ca.gov/documents/ar2001-1.pdf"><big>
+http://www.courts.ca.gov/documents/ar2001-1.pdf </big></a><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;
+and scroll down to page 6:&nbsp; </span><br>
+<br>
+<div style="text-align: center;"><img style="width: 349px; height: 143px;" alt="" src="judCoun1967.png"><br>
+</div>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">The
+Judicial Council</span><span style="font-family: Helvetica,Arial,sans-serif;">
+tells us that police make </span><span style="font-weight: bold; text-decoration: underline; color: red; font-family: Helvetica,Arial,sans-serif;">ARRESTS</span><span style="font-family: Helvetica,Arial,sans-serif;">
+- NOT DETENTIONS - when they pull someone over for an INFRACTION. </span><br>
+<img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"> &nbsp; <a href="http://www.section520.org/NOTICE%20TO%20APPEAR%20instructions%20Judical%20Council.pdf"><big style="font-weight: bold;">NOTICE TO APPEAR AND RELATED FORMS</big></a><br>
+</div>
+<br>
+<div style="text-align: center; font-family: Helvetica,Arial,sans-serif;"><img style="width: 76px; height: 31px;" alt="" src="spacer.png"><br>
+<br>
+<big><big><big>W<small>EST’S</small>
+C<small>ALIFORNIA</small> D<small>IGEST </small></big></big></big><br>
+</div>
+<div style="text-align: center; font-family: Helvetica,Arial,sans-serif;"><big><big>Vol.
+14B</big></big><br>
+<br>
+<big>CRIMINAL LAW §§1 - 303<br>
+p. 77<br>
+</big></div>
+<big><br style="font-family: Helvetica,Arial,sans-serif;">
+</big>
+<div style="margin-left: 40px;"><big><span style="font-family: Helvetica,Arial,sans-serif;">I.&nbsp;
+NATURE AND
+ELEMENTS OF CRIME AND DEFENSES IN GENERAL.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-family: Helvetica,Arial,sans-serif;">1.
+Nature of crime in general.</span><br>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+</big></div>
+<div style="margin-left: 80px;"><big><span style="font-family: Helvetica,Arial,sans-serif;">Cal.App.
+1914.&nbsp;&nbsp; In View of Code Civ. Proc. § 24, declaring
+actions to be two kinds, civil and </span><span style="font-family: Helvetica,Arial,sans-serif;">criminal,
+and § 22, defining actions, there is no such thing as a
+“quasi-criminal act.”</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Ex
+Parte Clark</span><span style="font-family: Helvetica,Arial,sans-serif;">, 141 P.
+831, 24 C.A. 389.</span></big>
+<br>
+</div>
+</div>
+</center>
+<blockquote>
+<center><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"><a href="http://www.section520.org/battle.html"><font size="+2"><small>&nbsp;&nbsp; </small><big>P</big>eople<small>
+v. </small><big>B</big>attle<small>, </small><big>5</big>0<small>
+</small><big>C</big>al<small>.</small><big>A</big>pp<small>.</small><big>3</big>d<small>
+</small><big>S</big>upp<small>. </small><big>1
+</big>&nbsp;</font></a><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"><br>
+<br>
+<img style="width: 76px; height: 31px;" alt="" src="spacer.png"> </center>
+<blockquote>
+<center>
+<p><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif">&nbsp;<font face=" Helvetica,Arial,sans-serif"><font size="+4"><a href="http://www.section520.org/hazy.html">&nbsp;D<small>riving</small>
+M<small>iss</small> H<small>azy</small>&nbsp;&nbsp;</a></font></font><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"> <br>
+<a href="http://www.section520.org/hazy.html"><font face=" Helvetica,Arial,sans-serif"><font size="+3">E<small>xcellent</small>
+L<small>aw</small> R<small>eview</small> A<small>rticle</small>
+R<small>e</small></font></font><small> </small><br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+3">V<small>ehicle</small>
+C<small>ode</small> I<small>nfractions</small> B<small>eing</small>
+<u>CIVIL</u></font></font></a></p>
+<p><img style="width: 76px; height: 31px;" alt="" src="spacer.png"> </p>
+<p><a href="http://www.section520.org/stan.html"><font face=" Helvetica,Arial,sans-serif"><small><font size="+4"><small>S</small></font></small><font size="+3">tanford </font><small><font size="+4"><small>L</small></font></small><font size="+3">aw </font><small><font size="+4"><small>R</small></font></small><font size="+3">eview</font></font> </a><br>
+<img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif">&nbsp;&nbsp;&nbsp;
+<font face=" Helvetica,Arial,sans-serif"><font size="+3"><a href="http://www.section520.org/stan.html">N<small>ONARREST</small>
+A<small>UTOMOBILE</small> S<small>TOPS</small>&nbsp;&nbsp;</a></font></font><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"> <br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+3"><a href="http://www.section520.org/stan.html">Vol.
+25, June
+1973</a></font></font></p>
+<p><img style="width: 76px; height: 31px;" alt="" src="spacer.png"></p>
+</center>
+</blockquote>
+<center><font face=" Helvetica,Arial,sans-serif"><font size="+3"><a href="http://www.section520.org/complaint.html">D<small>efinition</small>
+o<small>f</small>&nbsp; "C<small>omplaint</small>"
+v. "N<small>otice</small>
+T<small>o</small> A<small>ppear</small>"</a><small><small><br>
+<br>
+</small></small></font></font><img style="width: 76px; height: 31px;" alt="" src="spacer.png">
+<p><font face=" Helvetica,Arial,sans-serif"><font size="+3"><a href="http://www.section520.org/definitionofcomplaint.html">D<small>efinition</small>
+o<small>f</small> C<small>OMPLAINT</small></a></font></font></p>
+<img style="width: 76px; height: 31px;" alt="" src="spacer.png"></center>
+</blockquote>
+<center><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"> <small><font face=" Helvetica,Arial,sans-serif"><font size="+3"><small><a href="http://www.section520.org/verifiedcomplaint2.html">&nbsp;
+The Requirement of a <u>VERIFIED COMPLAINT</u>&nbsp;&nbsp;</a></small></font></font></small><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"> <br>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+3"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"></font></font></center>
+<blockquote>
+<blockquote>
+<center><font face=" Helvetica,Arial,sans-serif"><br>
+<img style="width: 160px; height: 120px;" alt="" src="strobeth_animatedpolicecar.gif"><br>
+<br>
+<a href="http://www.section520.org/detention.html"><font size="+3">- What's A "<u>Detention</u></font><font size="+2">"</font><font size="+3">? -</font></a></font></center>
+<blockquote><font face=" Helvetica,Arial,sans-serif"><font size="+1">The United
+States Supreme Court has identified <b style="text-decoration: underline; color: red;">three categories of
+police
+contact</b> with persons. <b style="text-decoration: underline; color: red;">The first</b> is
+referred to as a "<b style="text-decoration: underline; color: red;">consensual
+encounter</b>" in which there is no restraint on the person's
+liberty.
+There need be no objective justification for such an encounter. <b style="text-decoration: underline; color: red;">The
+second</b> type, called <b>"<span style="text-decoration: underline; color: red;">detention</span>,"</b> <b style="text-decoration: underline; color: red;">involves
+a seizure</b>
+of the individual for a limited duration and for limited purposes. <b style="text-decoration: underline; font-weight: bold; color: red;">A
+constitutionally acceptable detention can occur "if there is an
+articulable suspicion that a person has committed or is about to commit
+a crime.</b><span style="text-decoration: underline; font-weight: bold; color: red;">" </span><b><span style="text-decoration: underline; font-weight: bold; color: red;">The third</span> </b>type involves
+seizures in the nature
+of an <span style="font-weight: bold; text-decoration: underline; color: red;">arrest</span>, which may occur only if the police
+have probable cause to arrest the person <span style="font-weight: bold; text-decoration: underline; color: red;">for a crime</span>. (Florida v.
+Royer,
+supra, 460 U.S. 491; Wilson v. Superior Court, supra, 34 Cal.3d 777.)</font></font>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1"><b><i>PEOPLE
+v.
+BAILEY</i></b> , 176 Cal.App.3d 402</font></font>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1">[No.
+H000583. Court
+of Appeals of California, Sixth Appellate District. December 17,1985.]</font></font>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1">[Emphasis
+added]</font></font>
+<p><b><font face=" Helvetica,Arial,sans-serif"><font size="+1">Police officer
+may not rely on good faith, inarticulable hunches, or generalized
+suspicions
+to meet standard of reasonable suspicion to justify investigatory stop.</font></font></b>
+<br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1"><b><i>U.S.&nbsp;
+v.&nbsp; Velarde</i></b>, 823 F. Supp. 792.&nbsp;
+(D. Hawaii 1993)</font></font></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p style="text-align: center;"><font face=" Helvetica,Arial,sans-serif"><font size="+3"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"></font></font>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 16px; height: 16px;" alt="" src="tri_green_dark.gif"> &nbsp;<big><big>
+<span style="font-family: Helvetica,Arial,sans-serif;">C</span></big><span style="font-family: Helvetica,Arial,sans-serif;">ALIFORNIA
+</span><big style="font-family: Helvetica,Arial,sans-serif;">P</big><span style="font-family: Helvetica,Arial,sans-serif;">EACE </span><big style="font-family: Helvetica,Arial,sans-serif;">O</big><span style="font-family: Helvetica,Arial,sans-serif;">FFICER'S </span><big style="font-family: Helvetica,Arial,sans-serif;">L</big><span style="font-family: Helvetica,Arial,sans-serif;">EGAL
+</span><big style="font-family: Helvetica,Arial,sans-serif;">S</big><span style="font-family: Helvetica,Arial,sans-serif;">OURCE </span><big style="font-family: Helvetica,Arial,sans-serif;">B</big><span style="font-family: Helvetica,Arial,sans-serif;">OOK&nbsp;
+&nbsp;</span></big><img style="width: 16px; height: 16px; font-family: Helvetica,Arial,sans-serif;" alt="" src="tri_green_dark.gif"><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-family: Helvetica,Arial,sans-serif;">(<span style="font-weight: bold;">Prepared
+by the California Attorney General</span>)</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<big style="font-family: Helvetica,Arial,sans-serif;">SELECTED
+PAGES</big><br>
+<br>
+<a style="font-weight: bold;" href="http://section520.org/Binder1.pdf">Selected
+Pages
+- 33 megs</a><br style="font-weight: bold;">
+<a style="font-weight: bold;" href="http://section520.org/Binder2.pdf">Search
+&amp; Seizure -
+Person - 4 megs</a><br style="font-weight: bold;">
+<a style="font-weight: bold;" href="http://section520.org/vehiclesearch.pdf">Search
+&amp; Seizure
+- Vehicle - 25 megs</a></div>
+<blockquote>
+<div style="text-align: left;"> <b style="font-family: Helvetica,Arial,sans-serif;"><br>
+</b>
+<div style="margin-left: 40px;"><b style="font-family: Helvetica,Arial,sans-serif;">"'<i><font color="#ff0000"><u>To be valid</u></font></i>,
+administrative action <font color="#ff0000"><u style="font-style: italic;">must be within the
+scope of authority conferred</u><u><i> by the
+enabling statutes</i></u></font>.
+. . .' . . . 'If the court determines that a challenged administrative
+action <font color="#ff0000"><u><i>was not
+authorized</i></u></font>
+by or is inconsistent with acts of the Legislature, <span style="font-style: italic; text-decoration: underline; color: rgb(255, 0, 0);">that
+action is
+void</span>.'" (US Ecology, Inc. v. State of California (2001) 92
+Cal.App.4th
+113, 131-132.)</b><br style="font-family: Helvetica,Arial,sans-serif;">
+<b style="font-family: Helvetica,Arial,sans-serif;"><span style="font-style: italic;">Hamilton v.
+Gourley</span> (2002), 103 Cal.App.4th 351 </b><br style="font-family: Helvetica,Arial,sans-serif;">
+<b><span style="font-family: Helvetica,Arial,sans-serif;">[No.
+C038751. Third Dist. Oct. 31, 2002.]</span><br>
+</b></div>
+<br>
+<div style="margin-left: 40px;"><big style="font-family: Calibri;"><span style="font-weight: bold;"><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"></span></big>&nbsp; &nbsp;<span style="font-family: Helvetica,Arial,sans-serif;">Obviously,
+administrative agencies,
+like police officers must obey the Constitution and may not deprive
+persons of constitutional rights.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Southern
+Pac. Transportation Co. v. Public Utilities Com</span><span style="font-family: Helvetica,Arial,sans-serif;">., 18
+Cal.3d 308</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-family: Helvetica,Arial,sans-serif;">[S.F.
+No. 23217. Supreme Court of California. November 23, 1976.]</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<big style="font-family: Calibri;"><span style="font-weight: bold;"><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"></span></big><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;
+&nbsp;“So long as one uses his private property for private
+purposes
+and does not devote it to the public use, the public has no interest in
+it and no voice in its control. </span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Associated
+Pipe v. Railroad Commission</span><span style="font-family: Helvetica,Arial,sans-serif;">, 176 Cal.
+518</span><br>
+<br>
+<big style="font-family: Calibri;"><span style="font-weight: bold;"><img style="width: 45px; height: 15px;" alt="" src="RightArrowO.gif"></span></big>&nbsp; &nbsp;<span style="font-family: Helvetica,Arial,sans-serif;">There can
+be no sanction or penalty imposed upon one&nbsp; because of the
+exercise of a constitutional&nbsp; right.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Sherar
+v. Cullen</span><span style="font-family: Helvetica,Arial,sans-serif;">,&nbsp;
+481 F. 945 (9th Cir. 1973) </span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">Spevack
+v. Klein</span><span style="font-family: Helvetica,Arial,sans-serif;">, 385 U.S.
+511 (1967)</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">GARRITY
+v. NEW JERSEY</span><span style="font-family: Helvetica,Arial,sans-serif;">, 385 U.S.
+493 (1967)</span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">MALLOY
+v. HOGAN</span><span style="font-family: Helvetica,Arial,sans-serif;">, 378 U.S.
+1 (1964) </span><br style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; font-style: italic; font-family: Helvetica,Arial,sans-serif;">BOYD
+v. U S</span><span style="font-family: Helvetica,Arial,sans-serif;">, 116 U.S.
+616 (1886)</span><br>
+</div>
+</div>
+<font style="color: rgb(153, 0, 0);" size="+3"><span style="font-family: Helvetica,Arial,sans-serif;"></span></font><font size="+3"><font color="#000000"><small><small><br>
+</small></small> </font></font>
+<div style="text-align: center;"><font size="+3"><font color="#000000"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"></font></font></div>
+<center style="color: rgb(153, 0, 0);">
+<p><font face=" Helvetica,Arial,sans-serif"><font size="+3">T</font><font size="+2"><big>raffic</big>
+</font><big><small><font size="+3">C</font></small><font size="+2"><big>ourt Commissioners</big></font></big></font><big>
+</big><br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+2">are
+<u><big>R</big>EQUIRED</u> to
+follow</font></font> <font face=" Helvetica,Arial,sans-serif"><font size="+2">decisions
+of courts of
+superior jurisdiction</font></font></p>
+</center>
+<div style="text-align: center;"><a href="http://www.section520.org/Auto%20Equity%20Sales%20Inc%20v%20Superior%20Court.pdf"><font size="+3">A</font><font size="+2">uto </font><font size="+3">E</font><font size="+2">quity </font><font size="+3">S</font><font size="+2">ales, </font><font size="+3">I</font><font size="+2">nc v. </font><font size="+3">S</font><font size="+2">uperior
+</font><font size="+3">C</font><font size="+2">ourt, 57 Cal.2d 450</font></a><br>
+</div>
+<br>
+<div style="text-align: center;"><img style="width: 580px; height: 10px;" alt="" src="CLAYLINE.GIF"></div>
+</blockquote>
+<center><a href="http://caselaw.lp.findlaw.com/scripts/getcase.pl?navby=case&amp;court=us&amp;vol=116&amp;page=616"><font size="+4">B</font><font size="+3">OYD v. </font><font size="+4">U</font><font size="+3">.</font><font size="+4">S</font><font size="+3">.</font>
+<br><font size="+3">116
+U.S. 616 (1886)</font></a>
+</center>
+<blockquote style="font-family: Helvetica,Arial,sans-serif;"><font size="+1">"...any compulsory
+discovery by extorting
+the party's oath, or compelling the production of his private books and
+papers, to convict him of crime, or to forfeit his property, is
+contrary to the principles of a free government.&nbsp; It is
+abhorrent
+to the instincts of an Englishman; it is abhorrent to the instincts of
+an American.&nbsp; It may suit the purposes of despotic power, but
+it
+cannot abide the pure atmosphere of political
+liberty and personal freedom,...</font>
+<p><font size="+1">And we are further of opinion
+that a compulsory
+production of the private books and papers of the owner of goods sought
+to be forfeited in such a suit is compelling him to be a witness
+against himself, within the
+meaning of the fifth amendment to the Constitution, and is the
+equivalent of a search and seizure -- and an unreasonable search and
+seizure -- within the meaning of the fourth amendment,"</font> <br>
+<font size="+1"><i>Boyd v. United States, </i>116
+U.S. 616 (1886)</font></p>
+</blockquote>
+<center><a href="http://caselaw.lp.findlaw.com/scripts/getcase.pl?court=us&amp;vol=443&amp;invol=47"><font face=" Helvetica,Arial,sans-serif"><font size="+4">B</font><font size="+3">rown v.
+</font><font size="+4">T</font><font size="+3">exas</font></font> <br><font face=" Helvetica,Arial,sans-serif"><font size="+3">443
+U.S. 47 (1979)</font></font></a>
+</center>
+<blockquote><font face=" Helvetica,Arial,sans-serif"><font size="+1">The
+application of
+the Texas statute to detain appellant and require him to identify
+himself</font></font> <font face=" Helvetica,Arial,sans-serif"><font size="+1">violated
+the Fourth
+Amendment because the officers lacked any reasonable suspicion to</font></font>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1">believe
+that appellant
+was engaged or had engaged in criminal conduct. Detaining appellant</font></font>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1">&nbsp;to
+require him to
+identify himself constituted a seizure of his person subject to the
+requirement</font></font> <font face=" Helvetica,Arial,sans-serif"><font size="+1">of
+the Fourth Amendment
+that the seizure be "reasonable." Cf. Terry v. Ohio, 392 U.S. 1;</font></font>
+<font face=" Helvetica,Arial,sans-serif"><font size="+1">United
+States v.
+Brignoni-Ponce, 422 U.S. 873 .</font></font></blockquote>
+<center><a href="http://caselaw.lp.findlaw.com/scripts/getcase.pl?court=us&amp;vol=392&amp;invol=1"><font face=" Helvetica,Arial,sans-serif"><font size="+4">T</font><font size="+3">ERRY v.
+</font><font size="+4">O</font><font size="+3">HIO</font></font> <br><font face=" Helvetica,Arial,sans-serif"><font size="+3">392
+U.S. 1 (1968)</font></font></a>
+</center>
+<blockquote><font face=" Helvetica,Arial,sans-serif"><font size="+1">There is
+nothing in the Constitution which prevents a policeman from addressing
+questions to
+anyone on the streets. Absent special circumstances, the person
+approached may not be detained or frisked but may refuse to cooperate
+and go on his way.
+However, given the proper circumstances, such as those in this case, it
+seems
+to me the person may be briefly detained against his will while
+pertinent questions are directed to him. Of course, the person stopped
+is not obliged to answer, answers may not be compelled, and refusal to
+answer furnishes
+no basis for an arrest,...</font></font></blockquote>
+<center>
+<p><br>
+<a href="http://www.constitution.org/ussc/502-021.txt"><font face=" Helvetica,Arial,sans-serif"><font size="+3">HAFER
+v.
+MELO, 502
+U.S. 21 (1991)</font></font> </a><br>
+<font face=" Helvetica,Arial,sans-serif"><font size="+2">U.S.
+Supreme Court</font></font>
+</p>
+<p><font face=" Helvetica,Arial,sans-serif"><font size="+1">State
+officers may be
+held personally liable for damages under 1983</font></font><font face=" Helvetica,Arial,sans-serif"><font size="+1">
+based upon actions taken in their official capacities.</font></font>
+<br>
+</p>
+</center>
+<br>
+<div align="center"><a href="http://web.archive.org/web/20121015151744/http://section520.org/linkpage.html"><span style="font-family: Arrus BT;"><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 100px; height: 29px;" alt="" src="GOBACK.gif"></span></span></a><br>
+</div>
+<br>
+<br>
+<div align="center"><br>
+<script language="JavaScript" type="text/javascript" src="counter.htm"></script><br>
+</div>
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 START -->
+<script type="text/javascript" src="count.js"></script>
+<script type="text/javascript"><!--
+wm_custnum='475f0b7785ed0d1e';
+wm_page_name='car.html';
+wm_group_name='/services/webpages/s/e/section520.org/public';
+wm_campaign_key='campaign_id';
+wm_track_alt='';
+wiredminds.count();
+// -->
+</script><!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 END -->
+<!-- FILE ARCHIVED ON 15:17:44 Oct 15, 2012 AND RETRIEVED FROM THE INTERNET ARCHIVE ON 16:51:59 Sep 2, 2013. JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE. ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C. SECTION 108(a)(3)). -->
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 START -->
+<script type='text/javascript' src='https://oasis7.carrierzone.com/app/count_server/count.js'></script>
+<script type='text/javascript'><!--
+wm_custnum='475f0b7785ed0d1e';
+wm_page_name='car.html';
+wm_group_name='/services/webpages/s/e/section520.org/public';
+wm_campaign_key='campaign_id';
+wm_track_alt='';
+wiredminds.count();
+// -->
+</script>
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 END -->
+</body></html>
